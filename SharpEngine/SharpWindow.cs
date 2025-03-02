@@ -163,6 +163,15 @@ public class SharpWindow
     /// Gets the scene system.
     /// </summary>
     public SceneSystem SceneSystem => _sceneSystem;
+
+    /// <summary>
+    /// Gets the handle of the window.
+    /// </summary>
+    public IntPtr Handle 
+    {
+        get;
+    }
+
     #endregion
 
     #region events
@@ -202,6 +211,21 @@ public class SharpWindow
        components = new ();
        spriteSheets = new ();
        graphicsDevice = new (this);
+    }
+
+    /// <summary>
+    /// Initalize a new instance of <see cref="SharpWindow"/>
+    /// </summary>
+    /// <param name="handle">the handle to attach to this window.</param>
+    public SharpWindow(IntPtr handle) 
+    {
+        NullHelper.IsNullThrow(handle, nameof(handle));
+
+        graphicsDeviceManager = new (this);
+        contentManager = new (this);
+        components = new ();
+        spriteSheets = new ();
+        graphicsDevice = new (this);
     }
     
     #endregion
@@ -382,7 +406,7 @@ public class SharpWindow
 
         if(!_initalized)
         {
-            (bool value, RenderWindow window) = graphicsDeviceManager._createFromWindow(Title, BitsPerPixel);
+            (bool value, RenderWindow window) = graphicsDeviceManager._createFromWindow(Title, BitsPerPixel, NullHelper.IsNull(Handle)? 0 : Handle);
 
             if(value) this.renderWindow = window;
             else throw new Exception("Unable to create graphics device manager.");

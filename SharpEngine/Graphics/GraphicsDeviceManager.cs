@@ -80,7 +80,7 @@ public class GraphicsDeviceManager
     
 #nullable disable
 
-    internal (bool value, RenderWindow window) _createFromWindow(string title, BitsPerPixel bitsPerPixel = BitsPerPixel.Default)
+    internal (bool value, RenderWindow window) _createFromWindow(string title, BitsPerPixel bitsPerPixel = BitsPerPixel.Default, IntPtr handle = 0)
     {
         bool value = false;
         RenderWindow window;
@@ -124,7 +124,14 @@ public class GraphicsDeviceManager
             _currentSettings.DepthBits = (uint)currentContext.DepthBit;
             _currentSettings.StencilBits = (uint)currentContext.StencilBit;
             
-            window = new RenderWindow(video, title, style, _currentSettings);
+            if(handle == 0)
+            {
+                window = new RenderWindow(video, title, style, _currentSettings);
+            }
+            else 
+            {
+                window = new RenderWindow(handle, _currentSettings);
+            }
 
             window.SetActive(true);
             window.SetView(
