@@ -10,6 +10,7 @@
     <PackageTags>SFML.NET 2D Engine, 2D Engine</PackageTags>
     <RepositoryUrl>https://github.com/theofficialsharpboy/SharpEngine</RepositoryUrl>
     <PackageVersion>1.0.1</PackageVersion>
+    <Lisence>GPL</Lisence>
   </PropertyGroup>
 
   <ItemGroup>
