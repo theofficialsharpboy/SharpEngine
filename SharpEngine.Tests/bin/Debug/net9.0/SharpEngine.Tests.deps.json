@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v9.0": {
       "SharpEngine.Tests/1.0.0": {
         "dependencies": {
-          "SharpEngine": "1.0.0"
+          "2DSharpEngine": "1.0.0",
+          "SharpEngine": "1.0.0.0"
         },
         "runtime": {
           "SharpEngine.Tests.dll": {}
@@ -964,10 +965,18 @@
           }
         }
       },
-      "SharpEngine/1.0.0": {
+      "2DSharpEngine/1.0.0": {
         "dependencies": {
           "SFML.Net": "2.6.0"
         },
+        "runtime": {
+          "SharpEngine.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SharpEngine/1.0.0.0": {
         "runtime": {
           "SharpEngine.dll": {
             "assemblyVersion": "1.0.0.0",
@@ -1025,8 +1034,13 @@
       "path": "sfml.window/2.6.0",
       "hashPath": "sfml.window.2.6.0.nupkg.sha512"
     },
-    "SharpEngine/1.0.0": {
+    "2DSharpEngine/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SharpEngine/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

@@ -11,12 +11,12 @@ public class Vector2
     /// <summary>
     /// Gets the x position.
     /// </summary>
-    public float X{get;private set;}
+    public float X{get;set;}
 
     /// <summary>
     /// Gets the y position.
     /// </summary>
-    public float Y{get;private set;}
+    public float Y{get;set;}
     
     /// <summary>
     /// Initialize a new instance of <see cref="Vector2"/>

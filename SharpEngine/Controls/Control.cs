@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using SFML.Graphics;
 using SharpEngine.Content;
 using SharpEngine.Controls.EventArgs;
+using SharpEngine.Controls.Exceptions;
 using SharpEngine.Extensions;
 using SharpEngine.Graphics;
 using SharpEngine.Helpers;
@@ -21,6 +22,7 @@ namespace SharpEngine.Controls;
 public abstract class Control
 {
     #region fields and events
+
     /// <summary>
     /// Raised when mouse has moved.
     /// </summary>
@@ -50,6 +52,22 @@ public abstract class Control
     /// Raised when clicked.
     /// </summary>
     public event ControlEventHandler<object, System.EventArgs> Click;
+
+    /// <summary>
+    /// Raised when gained focus.
+    /// </summary>
+    public event ControlEventHandler Focused;
+
+    /// <summary>
+    /// Raised when lost focus.
+    /// </summary>
+    public event ControlEventHandler LostFocus;
+
+    /// <summary>
+    /// Raised when a key is up.
+    /// </summary>
+    public event ControlEventHandler<KeyEventArgs> KeyUp;
+
     #endregion
 
     #region properties
@@ -136,6 +154,15 @@ public abstract class Control
     }
 
     /// <summary>
+    /// Gets or sets weather this <see cref="Control"/> has focus.
+    /// </summary>
+    public bool IsFocused 
+    {
+        get;
+        private set;
+    }
+
+    /// <summary>
     /// Gets the bounds of this control.
     /// </summary>
     public Rectangle Bounds => new ((int)Position.X, (int)Position.Y, Size.Width, Size.Height);
@@ -173,13 +200,17 @@ public abstract class Control
         spritebatch.End();
     }
     protected virtual void OnUpdate(Time time) {}
+    protected virtual void OnFocused() => Focused?.Invoke();
+    protected virtual void OnLostFocus() => LostFocus?.Invoke();
+    protected virtual void OnKeyUp(Keys key) => KeyUp?.Invoke(new (key));
+
     protected virtual void OnHandleInput(InputSystem inputSystem) 
     {
         if(inputSystem == null) return;
 
         var mouse = inputSystem?.SearchForDevice<Mouse>("mouse");
         var keyboard = inputSystem?.SearchForDevice<Keyboard>("keyboard");
-
+        
         if(mouse == null) return;
         if(keyboard == null) return;
         
@@ -193,11 +224,20 @@ public abstract class Control
             {
                 OnClick();
                 OnMouseClick();
+                OnFocused();
+                
+                IsFocused = false;
             }
 
             OnMouseMove(new ((int)mouse.Position.X, (int)mouse.Position.Y));
         }
-        else OnMouseLeave();
+        else
+        {
+            OnMouseLeave();
+            OnLostFocus();
+            
+            IsFocused = false;
+        }
 
         List<string> keysList = new (EnumHelper.GetNames<Keys>());
         keysList.RemoveAt(keysList.Count -1);
@@ -209,6 +249,11 @@ public abstract class Control
             if(keyboard.IsNewKeyDown(k))
             {
                 OnKeyDown(k);
+            }
+            
+            if(keyboard.IsKeyUp(k))
+            {
+                OnKeyUp(k);
             }
         }
     }

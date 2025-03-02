@@ -1,9 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <PackageId>2DSharpEngine</PackageId>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Authers>http://thesharpboy.com</Authers>
+    <Description>A simple but powerful 2D engine, using SFML.NET, and with inpiration from MonoGame. </Description>
     <Nullable>enable</Nullable>
+    <PackageTags>SFML.NET 2D Engine, 2D Engine</PackageTags>
+    <RepositoryUrl>https://github.com/theofficialsharpboy/SharpEngine</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

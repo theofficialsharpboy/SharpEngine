@@ -799,17 +799,17 @@
           }
         }
       },
-      "SharpEngine/1.0.0": {
+      "2DSharpEngine/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
           "SFML.Net": "2.6.0"
         },
         "compile": {
-          "bin/placeholder/SharpEngine.dll": {}
+          "bin/placeholder/2DSharpEngine.dll": {}
         },
         "runtime": {
-          "bin/placeholder/SharpEngine.dll": {}
+          "bin/placeholder/2DSharpEngine.dll": {}
         }
       }
     }
@@ -1081,7 +1081,7 @@
         "sfml.window.nuspec"
       ]
     },
-    "SharpEngine/1.0.0": {
+    "2DSharpEngine/1.0.0": {
       "type": "project",
       "path": "../SharpEngine/SharpEngine.csproj",
       "msbuildProject": "../SharpEngine/SharpEngine.csproj"
@@ -1089,7 +1089,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "SharpEngine >= 1.0.0"
+      "2DSharpEngine >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1098,11 +1098,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\offic\\Documents\\GitHub\\SharpEngine\\SharpEngine.Tests\\SharpEngine.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\offic\\Documents\\GitHub\\SharpEngine\\sharpengine.tests\\SharpEngine.Tests.csproj",
       "projectName": "SharpEngine.Tests",
-      "projectPath": "C:\\Users\\offic\\Documents\\GitHub\\SharpEngine\\SharpEngine.Tests\\SharpEngine.Tests.csproj",
+      "projectPath": "C:\\Users\\offic\\Documents\\GitHub\\SharpEngine\\sharpengine.tests\\SharpEngine.Tests.csproj",
       "packagesPath": "C:\\Users\\offic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\offic\\Documents\\GitHub\\SharpEngine\\SharpEngine.Tests\\obj\\",
+      "outputPath": "C:\\Users\\offic\\Documents\\GitHub\\SharpEngine\\sharpengine.tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\offic\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -106,7 +106,12 @@ public class Color
         B = blue;
         A = alpha;
     }
-    
+    #region otherators
+    public static Color operator *(Color color, float alpha)
+    {
+        return new Color(color.R, color.G, color.B, (int)(alpha * 255f));
+    }
+    #endregion
     #region static colors
     public static Color Black = new ("#000000");
     public static Color White = new ("#FFFFFF");

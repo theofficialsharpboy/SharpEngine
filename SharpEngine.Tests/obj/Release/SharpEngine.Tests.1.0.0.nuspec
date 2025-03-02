@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SharpEngine.Tests</id>
+    <version>1.0.0</version>
+    <authors>SharpEngine.Tests</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="b63fe5d61dd048d92f9c432fd7edd8443d3267b4" />
+    <dependencies>
+      <group targetFramework="net9.0">
+        <dependency id="SharpEngine" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\offic\Documents\GitHub\SharpEngine\SharpEngine.Tests\bin\Release\net9.0\SharpEngine.Tests.runtimeconfig.json" target="lib\net9.0\SharpEngine.Tests.runtimeconfig.json" />
+    <file src="C:\Users\offic\Documents\GitHub\SharpEngine\SharpEngine.Tests\bin\Release\net9.0\SharpEngine.Tests.dll" target="lib\net9.0\SharpEngine.Tests.dll" />
+  </files>
+</package>
