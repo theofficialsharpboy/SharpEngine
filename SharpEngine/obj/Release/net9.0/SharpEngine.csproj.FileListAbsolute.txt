@@ -1,0 +1,12 @@
+C:\Users\offic\Documents\Projects\TheSharpEngineProject\SharpEngine\bin\Release\net9.0\SharpEngine.deps.json
+C:\Users\offic\Documents\Projects\TheSharpEngineProject\SharpEngine\bin\Release\net9.0\SharpEngine.dll
+C:\Users\offic\Documents\Projects\TheSharpEngineProject\SharpEngine\bin\Release\net9.0\SharpEngine.pdb
+C:\Users\offic\Documents\Projects\TheSharpEngineProject\SharpEngine\obj\Release\net9.0\SharpEngine.csproj.AssemblyReference.cache
+C:\Users\offic\Documents\Projects\TheSharpEngineProject\SharpEngine\obj\Release\net9.0\SharpEngine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\offic\Documents\Projects\TheSharpEngineProject\SharpEngine\obj\Release\net9.0\SharpEngine.AssemblyInfoInputs.cache
+C:\Users\offic\Documents\Projects\TheSharpEngineProject\SharpEngine\obj\Release\net9.0\SharpEngine.AssemblyInfo.cs
+C:\Users\offic\Documents\Projects\TheSharpEngineProject\SharpEngine\obj\Release\net9.0\SharpEngine.csproj.CoreCompileInputs.cache
+C:\Users\offic\Documents\Projects\TheSharpEngineProject\SharpEngine\obj\Release\net9.0\SharpEngine.dll
+C:\Users\offic\Documents\Projects\TheSharpEngineProject\SharpEngine\obj\Release\net9.0\refint\SharpEngine.dll
+C:\Users\offic\Documents\Projects\TheSharpEngineProject\SharpEngine\obj\Release\net9.0\SharpEngine.pdb
+C:\Users\offic\Documents\Projects\TheSharpEngineProject\SharpEngine\obj\Release\net9.0\ref\SharpEngine.dll
