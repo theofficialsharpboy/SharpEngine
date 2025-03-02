@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyDescriptionAttribute(("A simple but powerful 2D engine, using SFML.NET, and with inpiration from MonoGam" +
     "e. "))]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b63fe5d61dd048d92f9c432fd7edd8443d3267b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+906391a40f05bb80955ac29f138339fe8a378d3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SharpEngine")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SharpEngine")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

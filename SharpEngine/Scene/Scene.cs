@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using SharpEngine.Controls;
 using SharpEngine.Graphics;
+using SharpEngine.Helpers;
 using SharpEngine.Input;
+using SharpEngine.Scene.objecting;
 
 namespace SharpEngine.Scene;
 #nullable disable
@@ -12,6 +14,7 @@ namespace SharpEngine.Scene;
 public abstract class Scene
 {
     List<Control> controls;
+    static List<SceneObject> objects;
 
     /// <summary>
     /// Gets a bool value indecating whether this <see cref="Scene"/> is a popup.
@@ -98,8 +101,9 @@ public abstract class Scene
     {
         if(string.IsNullOrWhiteSpace(name)) throw new ArgumentNullException(nameof(name));
 
-        this.Name = name;
-        this.controls = new ();
+        Name = name;
+        controls = new ();
+        objects = new ();
     }
 
     /// <summary>
@@ -200,5 +204,54 @@ public abstract class Scene
     public void RemoveControl(Control control)
     {
         controls.Remove(control);
+    }
+
+    /// <summary>
+    /// Adds a scene object.
+    /// </summary>
+    /// <param name="obj"></param>
+    public void Add(SceneObject obj)
+    {
+        NullHelper.IsNullThrow(obj, nameof(obj));
+
+        objects.Add(obj);
+    }
+
+    /// <summary>
+    /// Removes a object.
+    /// </summary>
+    /// <param name="objName"></param>
+    public void Remove(string objName) 
+    {
+        NullHelper.IsNullThrow(objName, nameof(objName));
+
+        foreach(var obj in objects)
+        {
+            if(obj.Name == objName)
+            {
+                objects.Remove(obj);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Gets a specific <see cref="SceneObject"/> by its name.
+    /// </summary>
+    /// <typeparam name="T">The type of the <see cref="SceneObject"/></typeparam>
+    /// <param name="objName"></param>
+    /// <returns></returns>
+    public static T GetSceneObject<T>(string objName) where T: SceneObject
+    {
+        NullHelper.IsNullThrow(objName, nameof(objName));
+        SceneObject obj = null;
+
+        foreach(var item in objects)
+        {
+            if(item.Name == objName)
+            {
+                obj = (T)item;
+            }
+        }
+        return (T)obj;
     }
 }

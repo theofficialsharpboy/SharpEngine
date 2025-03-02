@@ -40,7 +40,7 @@ internal static class SFMLHelper
         return new SoundBuffer(bytes);
     }
 
-    
+    [Obsolete]    
     public static SoundBuffer ConvertSongToBuffer(Song song)
     {
         var bytes = File.ReadAllBytes(song.Path);

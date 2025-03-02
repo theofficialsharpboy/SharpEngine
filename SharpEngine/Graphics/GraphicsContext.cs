@@ -13,6 +13,22 @@ public class GraphicsContext
     bool fullscreen;
 
     /// <summary>
+    /// Gets the stencil bit rate.
+    /// </summary>
+    public StencilBit StencilBit
+    {
+        get;
+    }
+
+    /// <summary>
+    /// Gets the depth bit.
+    /// </summary>G
+    public DepthBit DepthBit
+    {
+        get;
+    }
+    
+    /// <summary>
     /// Gets the <see cref="Antialising"/>
     /// </summary>
     public Antialising Antialising 
@@ -60,7 +76,7 @@ public class GraphicsContext
     /// <param name="resulotion"></param>
     /// <exception cref="ArgumentOutOfRangeException"></exception>
     /// <exception cref="ArgumentNullException"></exception>
-    public GraphicsContext(int? frameLimit, bool? vsync, bool? isFullscreen, Resulotion resulotion)
+    public GraphicsContext(int? frameLimit, bool? vsync, bool? isFullscreen, Resulotion resulotion, StencilBit stencilBit = StencilBit.Default, DepthBit depthBits = DepthBit.Default)
     {
         if(resulotion == null) throw new ArgumentNullException(nameof(resulotion));
         
@@ -84,5 +100,7 @@ public class GraphicsContext
         
         this.resulotion = resulotion;
         this.Antialising = new ();
+        this.StencilBit = stencilBit;
+        this.DepthBit = depthBits;
     }
 }

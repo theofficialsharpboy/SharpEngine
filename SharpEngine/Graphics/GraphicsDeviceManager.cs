@@ -68,6 +68,9 @@ public class GraphicsDeviceManager
 
             if(context.Antialising.Enabled) _currentSettings.AntialiasingLevel = (uint)antialisingLevel;
 
+            _currentSettings.DepthBits = (uint)context.DepthBit;
+            _currentSettings.StencilBits = (uint)context.StencilBit;
+
         }
         catch {}
 
@@ -77,7 +80,7 @@ public class GraphicsDeviceManager
     
 #nullable disable
 
-    internal (bool value, RenderWindow window) _createFromWindow(string title)
+    internal (bool value, RenderWindow window) _createFromWindow(string title, BitsPerPixel bitsPerPixel = BitsPerPixel.Default)
     {
         bool value = false;
         RenderWindow window;
@@ -88,9 +91,11 @@ public class GraphicsDeviceManager
                 currentContext = new GraphicsContext(60, true, false, new (800, 600));
             }
 
+
             VideoMode video = new VideoMode(
               (uint)currentContext.Resulotion.Width,
-              (uint)currentContext.Resulotion.Height
+              (uint)currentContext.Resulotion.Height,
+              (uint)bitsPerPixel
             );
 
             Styles style = Styles.None;
@@ -116,8 +121,11 @@ public class GraphicsDeviceManager
                 _currentSettings.AntialiasingLevel = (uint)antialisingLevel;
             }
 
-            window = new RenderWindow(video, title, style, _currentSettings);
+            _currentSettings.DepthBits = (uint)currentContext.DepthBit;
+            _currentSettings.StencilBits = (uint)currentContext.StencilBit;
             
+            window = new RenderWindow(video, title, style, _currentSettings);
+
             window.SetActive(true);
             window.SetView(
                 SFMLHelper.SFMLView(new (

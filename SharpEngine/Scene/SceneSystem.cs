@@ -24,6 +24,10 @@ public class SceneSystem : DrawableComponent
     /// </summary>
     public SpriteBatch SpriteBatch => spriteBatch;
 
+    /// <summary>
+    /// Initialize a new instance of <see cref="SceneSystem"/>
+    /// </summary>
+    /// <param name="window"></param>
     public SceneSystem(SharpWindow window) : base(window)
     {
         initialized = false;

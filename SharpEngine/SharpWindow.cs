@@ -43,6 +43,21 @@ public class SharpWindow
     #region properties
 
     /// <summary>
+    /// Gets or sets the bits per pixel.
+    /// <para></para>
+    /// <para>1 BPP: This is monochrome, meaning each pixel can only be black or white (1 bit per pixel).</para>
+    /// <para>8 BPP: This is typically used for indexed color images, where each pixel is represented by an 8-bit index that points to a color in a color palette. This allows for up to 256 colors.</para>
+    /// <para>16 BPP: This is typically used for High Color images, often with 5 bits for red, 6 bits for green, and 5 bits for blue (RGB565 format), providing up to 65536 colors.</para>
+    /// <para>24 BPP: This is True Color and commonly used for images and displays. Each pixel uses 8 bits for each of the red, green, and blue channels, totaling 24 bits (8 bits per channel). This allows for over 16.7 million colors (256^3 = 16,777,216).</para>
+    /// <para>32 BPP: This is similar to 24 BPP but includes an alpha channel (transparency), where 8 bits are used for alpha and 8 bits for each RGB channel. This allows for True Color with Transparency (RGBA), with over 16.7 million colors plus transparency levels.</para>
+    ///</summary>
+    public BitsPerPixel BitsPerPixel
+    {
+        get;
+        set;
+    } = BitsPerPixel.Default;
+
+    /// <summary>
     /// Gets the graphics device.
     /// </summary>
     public GraphicsDevice GraphicsDevice 
@@ -367,7 +382,7 @@ public class SharpWindow
 
         if(!_initalized)
         {
-            (bool value, RenderWindow window) = graphicsDeviceManager._createFromWindow(Title);
+            (bool value, RenderWindow window) = graphicsDeviceManager._createFromWindow(Title, BitsPerPixel);
 
             if(value) this.renderWindow = window;
             else throw new Exception("Unable to create graphics device manager.");
