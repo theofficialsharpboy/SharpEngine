@@ -5,12 +5,15 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Authers>http://thesharpboy.com</Authers>
-    <Description>A simple but powerful 2D engine, using SFML.NET, and with inpiration from MonoGame. </Description>
+    <Description>This is a lightweight, high-performance 2D game engine built using SFML.NET, inspired by MonoGame. The engine provides a simple yet flexible framework for creating 2D games, leveraging the power of SFML for rendering, input handling, audio, and more. Whether you're a hobbyist or a seasoned game developer, this engine offers the tools you need to create your next 2D project with ease.</Description>
     <Nullable>enable</Nullable>
     <PackageTags>SFML.NET 2D Engine, 2D Engine</PackageTags>
     <RepositoryUrl>https://github.com/theofficialsharpboy/SharpEngine</RepositoryUrl>
     <PackageVersion>1.0.1</PackageVersion>
-    <Lisence>GPL</Lisence>
+    <ProjectUrl>https://github.com/theofficialsharpboy/SharpEngine</ProjectUrl>
+    <PackageReadMe>https://raw.githubusercontent.com/theofficialsharpboy/SharpEngine/refs/heads/main/README.md</PackageReadMe>
+    <Copyright>http://thesharpboy.com</Copyright>
+    <Trademark>TheSharpBoy</Trademark>
   </PropertyGroup>
 
   <ItemGroup>
