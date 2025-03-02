@@ -9,6 +9,16 @@ This is a lightweight, high-performance 2D game engine built using **SFML.NET**,
 - **Easy-to-Use API**: Focuses on simplicity, providing a clean and intuitive API for developers of all levels.
 - **Extensible**: Easily extendable to add new features or modify existing ones to suit your specific needs.
 
+## MonoGame Features
+- **GraphicsDevice/GraphicsDeviceManager**
+- **ContentManager**
+- **SpriteBatch**: The sprite batch has extensions, DrawLine, DrawTextureShadow, DrawTextShadow, CreateRectangle, CreateRoundedRectangle, and DrawGradient. Methods
+- **SpriteFont**
+- **Song/SoundEffect**
+- **Shader**: SFML.NET Shaders has a custom class called Effects from monogame. This class Takes 3 parameters, (shaderPath, geometryPath, fragmentPath).
+- **SceneSystem/Scene/SceneObjects**
+- **InputSystem**: The input system utilizes the SFML.NET input system. But recreated to make it simular to **MonoGame**
+
 ## Requirements:
 - .NET 9.0 or higher
 - SFML.NET (requires SFML native libraries) or SFML.NET nuget package.
