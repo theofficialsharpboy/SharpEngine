@@ -9,12 +9,11 @@ public abstract class SceneObject
     /// <summary>
     /// Gets or sets the tag of this <see cref="SceneObject"/>
     /// </summary>
-    [DefaultValue("")]
     public string Tag 
     {
         get;
         set;
-    }
+    } = "";
 
     /// <summary>
     /// Gets the name of this scene object.
