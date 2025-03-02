@@ -19,7 +19,11 @@ public class TextBox : Control
             if(key != Keys.Backspace)
             {
                 Text += key.ToString();
-            }            
+            }
+            else 
+            {
+                Text.Remove(Text.Length -1);
+            }
         }
     }
 
