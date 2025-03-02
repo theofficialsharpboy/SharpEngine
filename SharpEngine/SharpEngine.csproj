@@ -9,7 +9,7 @@
     <Nullable>enable</Nullable>
     <PackageTags>SFML.NET 2D Engine, 2D Engine</PackageTags>
     <RepositoryUrl>https://github.com/theofficialsharpboy/SharpEngine</RepositoryUrl>
-    <PackageVersion>1.0.1</PackageReference>
+    <PackageVersion>1.0.1</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
