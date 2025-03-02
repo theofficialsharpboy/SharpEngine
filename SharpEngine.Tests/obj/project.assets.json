@@ -1098,11 +1098,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\offic\\Documents\\Projects\\TheSharpEngineProject\\SharpEngine.Tests\\SharpEngine.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\offic\\Documents\\GitHub\\SharpEngine\\SharpEngine.Tests\\SharpEngine.Tests.csproj",
       "projectName": "SharpEngine.Tests",
-      "projectPath": "C:\\Users\\offic\\Documents\\Projects\\TheSharpEngineProject\\SharpEngine.Tests\\SharpEngine.Tests.csproj",
+      "projectPath": "C:\\Users\\offic\\Documents\\GitHub\\SharpEngine\\SharpEngine.Tests\\SharpEngine.Tests.csproj",
       "packagesPath": "C:\\Users\\offic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\offic\\Documents\\Projects\\TheSharpEngineProject\\SharpEngine.Tests\\obj\\",
+      "outputPath": "C:\\Users\\offic\\Documents\\GitHub\\SharpEngine\\SharpEngine.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\offic\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1117,8 +1117,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\offic\\Documents\\Projects\\TheSharpEngineProject\\SharpEngine\\SharpEngine.csproj": {
-              "projectPath": "C:\\Users\\offic\\Documents\\Projects\\TheSharpEngineProject\\SharpEngine\\SharpEngine.csproj"
+            "C:\\Users\\offic\\Documents\\GitHub\\SharpEngine\\SharpEngine\\SharpEngine.csproj": {
+              "projectPath": "C:\\Users\\offic\\Documents\\GitHub\\SharpEngine\\SharpEngine\\SharpEngine.csproj"
             }
           }
         }

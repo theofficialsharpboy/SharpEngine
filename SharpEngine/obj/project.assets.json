@@ -1080,11 +1080,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\offic\\Documents\\Projects\\TheSharpEngineProject\\SharpEngine\\SharpEngine.csproj",
+      "projectUniqueName": "C:\\Users\\offic\\Documents\\GitHub\\SharpEngine\\SharpEngine\\SharpEngine.csproj",
       "projectName": "SharpEngine",
-      "projectPath": "C:\\Users\\offic\\Documents\\Projects\\TheSharpEngineProject\\SharpEngine\\SharpEngine.csproj",
+      "projectPath": "C:\\Users\\offic\\Documents\\GitHub\\SharpEngine\\SharpEngine\\SharpEngine.csproj",
       "packagesPath": "C:\\Users\\offic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\offic\\Documents\\Projects\\TheSharpEngineProject\\SharpEngine\\obj\\",
+      "outputPath": "C:\\Users\\offic\\Documents\\GitHub\\SharpEngine\\SharpEngine\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\offic\\AppData\\Roaming\\NuGet\\NuGet.Config"

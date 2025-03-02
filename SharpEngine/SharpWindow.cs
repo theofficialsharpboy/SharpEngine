@@ -26,7 +26,6 @@ public class SharpWindow
     const int target = 60;
     float timeTillNextFrame = 1f / target;
     bool mouseVisable = false;
-    Stopwatch _gameTimer;
     bool _initalized = false;
     Time time;
     SceneSystem _sceneSystem;
@@ -172,6 +171,11 @@ public class SharpWindow
     /// Raised when closed.
     /// </summary>
     public event SharpWindowEventHandler Closed;
+
+    /// <summary>
+    /// Raised when initalized.
+    /// </summary>
+    public event SharpWindowEventHandler Initalized;
     #endregion
 
     #region constructors
@@ -181,7 +185,6 @@ public class SharpWindow
        graphicsDeviceManager = new (this);
        contentManager = new (this);
        components = new ();
-       _gameTimer = new ();
        spriteSheets = new ();
        graphicsDevice = new (this);
     }
@@ -217,10 +220,6 @@ public class SharpWindow
             Focused?.Invoke(eventArgs);
             IsFocused = true;
         };
-
-
-        _gameTimer.Reset();
-        _gameTimer.Start();
 
         Clock _sfmlClock = new ();
         frameInfo = new ();
@@ -364,8 +363,6 @@ public class SharpWindow
     public void Run() 
     {
         Initialize();
-
-        BeforeRun?.Invoke(new (this));
         time = new Time();
 
         if(!_initalized)
@@ -375,15 +372,16 @@ public class SharpWindow
             if(value) this.renderWindow = window;
             else throw new Exception("Unable to create graphics device manager.");
 
-            _gameTimer.Start();
-
             Activate();
 
             Instance = this;
 
             _initalized = true;
+
+            Initalized?.Invoke();
         }
 
+        BeforeRun?.Invoke(new (this));
         _doRun();
     }
 
