@@ -3,3 +3,5 @@ obj/
 bin
 bin/
 SharpEngine.Tests
+.sln
+.csproj
