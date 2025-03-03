@@ -75,6 +75,17 @@ public class SpriteBatch
     }
 
     /// <summary>
+    /// Draws a render target.
+    /// </summary>
+    /// <param name="target"></param>
+    public void DrawTarget(RenderTarget target)
+    {
+        NullHelper.IsNullThrow(target, nameof(target));
+
+        target.Display();
+    }
+    
+    /// <summary>
     /// Draws text on to the screen.
     /// </summary>
     /// <param name="font"></param>
