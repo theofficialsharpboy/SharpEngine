@@ -19,6 +19,13 @@ This is a lightweight, high-performance 2D game engine built using **SFML.NET**,
 - **SceneSystem/Scene/SceneObjects**
 - **InputSystem**: The input system utilizes the SFML.NET input system. But recreated to make it simular to **MonoGame**
 
+## Custom UI Controls.
+- **Button**
+- **TextBox**
+- **Label**
+- **Timer**
+- **Custom**: By inheriting the **Control** you can make your own. All handles are overridable.
+
 ## Requirements:
 - .NET 9.0 or higher
 - SFML.NET (requires SFML native libraries) or SFML.NET nuget package.
