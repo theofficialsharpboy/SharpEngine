@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using SharpEngine.Helpers;
 
-namespace SharpEngine.Sprites;
+namespace SharpEngine.Animation.Sprites;
 
 public class SpriteSheetEntry
 {

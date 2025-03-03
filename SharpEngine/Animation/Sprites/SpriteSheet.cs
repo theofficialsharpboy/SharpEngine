@@ -7,7 +7,7 @@ using SharpEngine.Content;
 using SharpEngine.Graphics;
 using SharpEngine.Helpers;
 
-namespace SharpEngine.Sprites;
+namespace SharpEngine.Animation.Sprites;
 
 public class SpriteSheet
 {
