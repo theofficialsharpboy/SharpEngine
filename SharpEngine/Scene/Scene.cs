@@ -6,7 +6,6 @@ using SharpEngine.Controls;
 using SharpEngine.Graphics;
 using SharpEngine.Helpers;
 using SharpEngine.Input;
-using SharpEngine.Scene.objecting;
 
 namespace SharpEngine.Scene;
 #nullable disable

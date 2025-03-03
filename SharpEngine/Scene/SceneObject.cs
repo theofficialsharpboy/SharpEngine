@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using SharpEngine.Helpers;
 
-namespace SharpEngine.Scene.objecting;
+namespace SharpEngine.Scene;
 
 public abstract class SceneObject
 {
