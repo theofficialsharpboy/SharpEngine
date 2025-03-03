@@ -8,7 +8,8 @@ using SharpEngine.Content;
 using SharpEngine.Graphics;
 using SharpEngine.Helpers;
 using SharpEngine.Scene;
-using SharpEngine.Sprites;
+using SharpEngine.Animation.Sprites;
+using SharpEngine.Extensions;
 
 namespace SharpEngine;
 
@@ -231,6 +232,7 @@ public class SharpWindow
     #endregion
 
     #region private method
+    [MTAThread]
     void _doRun() 
     {
         SharpWindowEventArgs eventArgs = new SharpWindowEventArgs(this);
@@ -266,8 +268,9 @@ public class SharpWindow
         SFML.System.Time deltaTime = new ();
         float totalSeconds = 0f;
         float fixedTime = 0;
-
         float timeScale = 1f;
+
+        fixedTime += deltaTime.AsMilliseconds();
         do 
         {
             renderWindow.DispatchEvents();
@@ -319,7 +322,7 @@ public class SharpWindow
             deltaTime = _sfmlClock.Restart();
             deltaTime *= timeScale;
             totalSeconds += deltaTime.AsSeconds();
-            fixedTime += deltaTime.AsMilliseconds();
+
 
             #region frame buffer info
             try 
@@ -434,6 +437,36 @@ public class SharpWindow
         if(renderWindow == null) throw new ArgumentNullException(nameof(image));
         renderWindow.SetIcon((uint)image.Size.X, (uint)image.Size.Y, image.Pixels);
     }
-    
+
+    /// <summary>
+    /// Draws the fps on screen.
+    /// </summary>
+    /// <param name="spriteFont"></param>
+    /// <param name="drawBackground"></param>
+    public void DrawFPS(SpriteFont spriteFont, bool drawBackground = true)
+    {
+        var spriteBatch = SceneSystem.SpriteBatch;
+        spriteBatch.Begin();
+        var fontSize = spriteFont.Measure($"FPS: {_fps.ToString("0.00")}\nLatency: {_fpsLatency.ToString("0.00")}\nCount: {_frameCount.ToString("0.00")}");
+
+        var rectangle = spriteBatch.CreateRectangle(fontSize.Width + 10, fontSize.Height +10, Color.White);
+        var rectanglePosition = new Vector2(10,10);
+
+        if(drawBackground)
+        {
+            spriteBatch.Draw(rectangle, rectanglePosition, Color.White);
+        }
+
+        var textPosition = new Vector2(rectanglePosition.X  + rectangle.Size.X /2 - fontSize.Width /2, (rectanglePosition.Y + rectangle.Size.Y /2 - fontSize.Height /2) - 3.5f);
+
+        spriteBatch.DrawString(
+            spriteFont, 
+            $"FPS: {_fps.ToString("0.00")}\nLatency: {_fpsLatency.ToString("0.00")}\nCount: {_frameCount.ToString("0.00")}",
+            textPosition, 
+            Color.Black
+        );
+
+        spriteBatch.End();
+    }
     #endregion
 }

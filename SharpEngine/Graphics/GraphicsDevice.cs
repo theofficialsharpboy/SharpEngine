@@ -65,7 +65,6 @@ public class GraphicsDevice
         window.renderWindow.Draw(drawable);
     }
 
-    
     /// <summary>
     /// Clears the color.
     /// </summary>

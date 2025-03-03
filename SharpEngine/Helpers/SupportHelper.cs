@@ -18,9 +18,7 @@ internal class SupportHelper
 
         foreach(var supported in supportedTypes)
         {
-            var extention = Path.GetExtension(fileName);
-
-            if(extention.Contains(supported) || extention == supported)
+            if(fileName.Contains(supported) || fileName.EndsWith(supported))
             {
                 return;
             }
@@ -41,9 +39,7 @@ internal class SupportHelper
 
         foreach(var supported in supportedTypes)
         {
-            var extention = Path.GetExtension(fileName);
-
-            if(extention.Contains(supported) || extention == supported)
+            if(fileName.Contains(supported) || fileName.EndsWith(supported))
             {
                 return;
             }
@@ -64,9 +60,7 @@ internal class SupportHelper
 
         foreach(var supported in supportedTypes)
         {
-            var extention = Path.GetExtension(fileName);
-
-            if(extention.Contains(supported) || extention == supported)
+            if(fileName.Contains(supported) || fileName.EndsWith(supported))
             {
                 return;
             }
