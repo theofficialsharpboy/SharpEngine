@@ -8,6 +8,8 @@ This is a lightweight, high-performance 2D game engine built using **SFML.NET**,
 - **Cross-Platform**: Supports Windows, macOS, and Linux, ensuring your games can run on multiple platforms.
 - **Easy-to-Use API**: Focuses on simplicity, providing a clean and intuitive API for developers of all levels.
 - **Extensible**: Easily extendable to add new features or modify existing ones to suit your specific needs.
+- **SpriteSheet**: Easily animate spritesheets.
+- **Animator**: Easily animate animations or 2D spritesheets.
 
 ## MonoGame Features
 - **GraphicsDevice/GraphicsDeviceManager**
