@@ -33,7 +33,7 @@ public class GraphicsDevice
     {
         get 
         {
-             var view = window.renderWindow.GetViewport(window.renderWindow.GetView());
+             var view = Window.renderWindow.GetViewport(Window.renderWindow.GetView());
              return new Viewport(view.Left, view.Top, view.Width, view.Height);
         }
     }
@@ -43,7 +43,7 @@ public class GraphicsDevice
     /// </summary>
     public void Draw(Drawable drawable, BlendMode blendMode, Effect effect) 
     {
-        window.renderWindow.Draw(drawable, new RenderStates(blendMode, Transform.Identity, null, SFMLHelper.SFMLShader(effect)));
+        Window.renderWindow.Draw(drawable, new RenderStates(blendMode, Transform.Identity, null, SFMLHelper.SFMLShader(effect)));
     }
 
     /// <summary>
@@ -51,7 +51,7 @@ public class GraphicsDevice
     /// </summary>
     public void Draw(Drawable drawable, BlendMode blendMode) 
     {
-        window.renderWindow.Draw(drawable, new RenderStates(blendMode));
+        Window.renderWindow.Draw(drawable, new RenderStates(blendMode));
     }
 
     /// <summary>
@@ -59,7 +59,7 @@ public class GraphicsDevice
     /// </summary>
     public void Draw(Drawable drawable, Effect effect)
     {
-        window.renderWindow.Draw(drawable, new RenderStates(BlendMode.None, Transform.Identity, null, SFMLHelper.SFMLShader(effect)));
+        Window.renderWindow.Draw(drawable, new RenderStates(BlendMode.None, Transform.Identity, null, SFMLHelper.SFMLShader(effect)));
     }
 
     /// <summary>
@@ -67,7 +67,7 @@ public class GraphicsDevice
     /// </summary>
     public void Draw(Drawable drawable) 
     {
-        window.renderWindow.Draw(drawable);
+        Window.renderWindow.Draw(drawable);
     }
 
     /// <summary>
@@ -76,6 +76,6 @@ public class GraphicsDevice
     /// <param name="color"></param>
     public void Clear(Color color) 
     {
-        window.renderWindow.Clear(SFMLHelper.SFMLColor(color));
+        Window.renderWindow.Clear(SFMLHelper.SFMLColor(color));
     }
 }
