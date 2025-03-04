@@ -77,6 +77,8 @@ public class SharpWindowFrameInfo
             int lowIndex = (int)(_fpsHistory.Count * 0.01f);
 
             _onePercentLowFps = sortedFPS[lowIndex];
+
+            _fpsHistory.Clear();
         }
     }
 }
