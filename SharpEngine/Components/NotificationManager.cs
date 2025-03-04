@@ -2,7 +2,7 @@
 using SharpEngine.Graphics;
 using SharpEngine.Helpers;
 
-namespace SharpEngine.Comnponents;
+namespace SharpEngine.Components;
 #nullable disable
 public class NotificationManager : DrawableComponent
 {

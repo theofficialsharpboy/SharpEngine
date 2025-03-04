@@ -9,7 +9,7 @@ using SharpEngine.Extensions;
 using SharpEngine.Graphics;
 using SharpEngine.Helpers;
 
-namespace SharpEngine.Comnponents;
+namespace SharpEngine.Components;
 
 public class Notification
 {
@@ -50,6 +50,7 @@ public class Notification
         this._spriteFont = font;
         this._fontSize = font.Measure(text);
         this.slideBackTime = diration;
+        this.text = text;
     }
 
     /// <summary>

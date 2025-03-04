@@ -1,4 +1,4 @@
-namespace SharpEngine.Comnponents;
+namespace SharpEngine.Components;
 
 public enum NotificationDirection
 {
