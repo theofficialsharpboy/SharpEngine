@@ -19,6 +19,25 @@ public class Vector2
     public float Y{get;set;}
     
     /// <summary>
+    /// Gets the length.
+    /// </summary>
+    public float Length
+    {
+        get => (float)Math.Sqrt(X * X + Y * Y);
+    }
+
+    /// <summary>
+    /// Gets the normalized values.
+    /// </summary>
+    public Vector2 Normalized
+    {
+        get
+        {
+            return Length > 0 ? new Vector2(X / Length, Y / Length) : Zero;
+        }
+    }
+
+    /// <summary>
     /// Initialize a new instance of <see cref="Vector2"/>
     /// </summary>
     /// <param name="x"></param>
@@ -98,6 +117,10 @@ public class Vector2
         );
     }
 
+    /// <summary>
+    /// Gets a <see cref="Vector2"/> with zero positions X=0, Y=0.
+    /// </summary>
+    public static Vector2 Zero => new Vector2(0, 0);
     public static Vector2 operator +(Vector2 vect, Vector2 vect2) => new Vector2(vect.X + vect2.X, vect.Y + vect2.Y);
     public static Vector2 operator -(Vector2 vect, Vector2 vect2) => new Vector2(vect.X - vect2.X, vect.Y - vect2.Y);
     public static Vector2 operator /(Vector2 vect, Vector2 vect2) => new Vector2(vect.X /vect2.X, vect.Y /vect2.Y);
