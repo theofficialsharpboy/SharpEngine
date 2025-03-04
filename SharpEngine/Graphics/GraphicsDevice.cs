@@ -5,10 +5,15 @@ using SharpEngine.Content;
 using SharpEngine.Helpers;
 
 namespace SharpEngine.Graphics;
-
 public class GraphicsDevice
 {
-    SharpWindow window;
+    /// <summary>
+    /// Gets the window this <see cref="GraphicsDevice"/> is attached to.
+    /// </summary>
+    public SharpWindow Window
+    {
+        get;
+    }
     
     /// <summary>
     /// Initalize a new instance of <see cref="GraphicsDevice"/>
@@ -18,7 +23,7 @@ public class GraphicsDevice
     {
         NullHelper.IsNullThrow(window, nameof(window));
 
-        this.window = window;
+        Window = window;
     }
 
     /// <summary>
