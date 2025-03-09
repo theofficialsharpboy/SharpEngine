@@ -51,6 +51,8 @@ public class Notification
         this._fontSize = font.Measure(text);
         this.slideBackTime = diration;
         this.text = text;
+
+        UpdatePosition();
     }
 
     /// <summary>

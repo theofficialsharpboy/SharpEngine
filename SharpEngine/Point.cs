@@ -33,4 +33,7 @@ public class Point
         this.x = x;
         this.y = y;
     }
+
+    public static Point operator +(Point a, Point b) => new Point(a.X + b.X, a.Y + b.Y);
+    public static Point operator -(Point a, Point b) => new Point(a.x - b.x, b.y - b.y);
 }

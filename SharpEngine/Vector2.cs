@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
 namespace SharpEngine;
@@ -118,6 +119,28 @@ public class Vector2
     }
 
     /// <summary>
+    /// Returns a dot product of two vectors.
+    /// </summary>
+    /// <param name="value1">The first vector.</param>
+    /// <param name="value2">The second vector.</param>
+    /// <returns>The dot product of two vectors.</returns>
+    public static float Dot(Vector2 value1, Vector2 value2)
+    {
+        return (value1.X * value2.X) + (value1.Y * value2.Y);
+    }
+
+    /// <summary>
+    /// Returns a dot product of two vectors.
+    /// </summary>
+    /// <param name="value1">The first vector.</param>
+    /// <param name="value2">The second vector.</param>
+    /// <param name="result">The dot product of two vectors as an output parameter.</param>
+    public static void Dot(ref Vector2 value1, ref Vector2 value2, out float result)
+    {
+        result = (value1.X * value2.X) + (value1.Y * value2.Y);
+    }
+
+    /// <summary>
     /// Gets a <see cref="Vector2"/> with zero positions X=0, Y=0.
     /// </summary>
     public static Vector2 Zero => new Vector2(0, 0);
@@ -130,4 +153,45 @@ public class Vector2
     public static bool operator >(Vector2 vect, Vector2 vect2) => vect.X > vect2.X && vect.Y > vect2.Y;
     public static bool operator <=(Vector2 vect, Vector2 vect2) => vect.X <= vect2.X && vect.Y <= vect2.Y;
     public static bool operator >=(Vector2 vect, Vector2 vect2) => vect.X >= vect2.X && vect.Y >= vect2.Y;
+
+    /// <summary>
+    /// Multiplies the components of vector by a scalar.
+    /// </summary>
+    /// <param name="value">Source <see cref="Vector2"/> on the left of the mul sign.</param>
+    /// <param name="scaleFactor">Scalar value on the right of the mul sign.</param>
+    /// <returns>Result of the vector multiplication with a scalar.</returns>
+    public static Vector2 operator *(Vector2 value, float scaleFactor)
+    {
+        value.X *= scaleFactor;
+        value.Y *= scaleFactor;
+        return value;
+    }
+
+    /// <summary>
+    /// Multiplies the components of vector by a scalar.
+    /// </summary>
+    /// <param name="scaleFactor">Scalar value on the left of the mul sign.</param>
+    /// <param name="value">Source <see cref="Vector2"/> on the right of the mul sign.</param>
+    /// <returns>Result of the vector multiplication with a scalar.</returns>
+    public static Vector2 operator *(float scaleFactor, Vector2 value)
+    {
+        value.X *= scaleFactor;
+        value.Y *= scaleFactor;
+        return value;
+    }
+
+    /// <summary>
+    /// Divides the components of a <see cref="Vector2"/> by a scalar.
+    /// </summary>
+    /// <param name="value1">Source <see cref="Vector2"/> on the left of the div sign.</param>
+    /// <param name="divider">Divisor scalar on the right of the div sign.</param>
+    /// <returns>The result of dividing a vector by a scalar.</returns>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static Vector2 operator /(Vector2 value1, float divider)
+    {
+        float factor = 1 / divider;
+        value1.X *= factor;
+        value1.Y *= factor;
+        return value1;
+    }
 }
