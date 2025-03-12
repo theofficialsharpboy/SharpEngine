@@ -10,6 +10,7 @@ using SharpEngine.Helpers;
 using SharpEngine.Scene;
 using SharpEngine.Animation.Sprites;
 using SharpEngine.Extensions;
+using SharpEngine.Components;
 
 namespace SharpEngine;
 
@@ -117,16 +118,6 @@ public class SharpWindow
         get;
         private set;
     }
-
-    /// <summary>
-    /// Gets or sets a bool value indecating whether to draw when focused.
-    /// </summary>
-    /// <remarks>True; will call Draw() events when focused only; other false.
-    public bool DrawWhenFocused 
-    {
-        get;
-        set;
-    } = true;
 
     /// <summary>
     /// Gets or sets whether this <see cref="SharpWindow"/> is running at a fixed time span.
@@ -275,43 +266,20 @@ public class SharpWindow
         {
             renderWindow.DispatchEvents();
 
-         
-            if(IsFixedTimeSpan)
+
+            if (IsFixedTimeSpan)
             {
-                if(fixedTime >= timeTillNextFrame)
-                {
-                    if(DrawWhenFocused) 
-                    {
-                        if(IsFocused) 
-                        {
-                            Update(time);
-                            fixedTime = 0;
-                            Draw(time);
-                        }
-                    }
-                    else 
-                    {
-                        Update(time);
-                        fixedTime = 0;
-                        Draw(time);
-                    }
-                }
-            } 
-            else 
-            {
-                if(DrawWhenFocused) 
-                {
-                    if(IsFocused) 
-                    {
-                        Update(time);
-                        Draw(time);
-                    }
-                }
-                else 
+                if (fixedTime >= timeTillNextFrame)
                 {
                     Update(time);
+                    fixedTime = 0;
                     Draw(time);
                 }
+            }
+            else
+            {
+                Update(time);
+                Draw(time);
             }
             
             time.Delta = deltaTime.AsSeconds();
@@ -364,7 +332,8 @@ public class SharpWindow
     {
         _sceneSystem = new (this);
         components.Add(_sceneSystem);
-        
+        components.Add(Notifications);
+
         foreach(var drawable in components)
         {
             drawable.Activate();

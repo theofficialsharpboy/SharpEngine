@@ -10,14 +10,14 @@ public class Point
     int x, y;
 
     /// <summary>
-    /// Gets the x position.
+    /// Gets or sets the x position.
     /// </summary>
-    public int X => x;
+    public int X { get => x; set => x = value; }
 
     /// <summary>
-    /// Gets the y position.
+    /// Gets or sets the y position.
     /// </summary>
-    public int Y => y;
+    public int Y { get => y; set => y = value; }
 
     /// <summary>
     /// Initialize a new instance of <see cref="Point"/>

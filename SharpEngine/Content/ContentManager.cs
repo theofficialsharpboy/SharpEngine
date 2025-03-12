@@ -56,6 +56,24 @@ public class ContentManager
     }
 
     /// <summary>
+    /// Loads a texture atlas.
+    /// </summary>
+    /// <param name="path"></param>
+    /// <param name="atlasCount"></param>
+    /// <param name="blockWidth"></param>
+    /// <param name="blockHeight"></param>
+    /// <returns></returns>
+    public Atlas LoadAtlasTexture(string path, int atlasCount, int blockWidth, int blockHeight)
+    {
+        SupportHelper.ThrowIfUnsupportedImageType(path);
+        NullHelper.IsNullThrow(atlasCount, nameof(atlasCount));
+        NullHelper.IsNullThrow(blockWidth, nameof(blockWidth));
+        NullHelper.IsNullThrow(blockHeight, nameof(blockHeight));
+
+        return new Atlas(path, atlasCount, blockWidth, blockHeight);
+    }
+
+    /// <summary>
     /// Loads a texture.
     /// </summary>
     /// <param name="path"></param>
