@@ -14,6 +14,10 @@
     <PackageReadMe>https://raw.githubusercontent.com/theofficialsharpboy/SharpEngine/refs/heads/main/README.md</PackageReadMe>
     <Copyright>http://thesharpboy.com</Copyright>
     <Trademark>TheSharpBoy</Trademark>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>1.0.3</Version>
+    <Company>TheSharpBoy</Company>
+    <Authors>StephenHale</Authors>
   </PropertyGroup>
 
   <ItemGroup>

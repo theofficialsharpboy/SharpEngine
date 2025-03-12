@@ -10,7 +10,6 @@ using SharpEngine.Helpers;
 using SharpEngine.Scene;
 using SharpEngine.Animation.Sprites;
 using SharpEngine.Extensions;
-using SharpEngine.Components;
 
 namespace SharpEngine;
 
@@ -332,7 +331,6 @@ public class SharpWindow
     {
         _sceneSystem = new (this);
         components.Add(_sceneSystem);
-        components.Add(Notifications);
 
         foreach(var drawable in components)
         {
