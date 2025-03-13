@@ -60,7 +60,6 @@ public abstract class TileMap
         NullHelper.IsNullThrow(tileWidth, nameof(tileWidth));
         NullHelper.IsNullThrow(tileHeight, nameof(tileHeight));
 
-
         this.width = width;
         this.height = height;
         this.tileWidth = tileWidth;
@@ -75,6 +74,24 @@ public abstract class TileMap
     /// Generate the tiles map for this <see cref="TileMap"/>
     /// </summary>
     protected abstract void GenerateTileMap();
+
+    /// <summary>
+    /// Gets a bool value indicating whether a specified collidable <see cref="Tile"/> collides with this <see cref="ICollidable"/>
+    /// </summary>
+    /// <param name="collidable">The <see cref="ICollidable"/></param>
+    /// <returns></returns>
+    public bool CollidesWith(ICollidable collidable)
+    {
+        NullHelper.IsNullThrow(collidable, nameof(collidable));
+        foreach (var tile in tiles)
+        {
+            if (tile.IsCollidable && collidable.Bounds.InteractWith(tile.Bounds))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     /// <summary>
     /// Draws all the tiles.

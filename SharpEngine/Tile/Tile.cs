@@ -3,11 +3,6 @@ using SharpEngine.Content;
 using SharpEngine.Extensions;
 using SharpEngine.Graphics;
 using SharpEngine.Helpers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SharpEngine.Tile;
 
