@@ -196,8 +196,8 @@ public static class SpriteBatchExtensions
         sprite.TextureRect = SFMLHelper.SFMLRect(bounds);
 
         if (me?.BlendMode != null && me.Effect != null) me.GraphicsDevice.Draw(sprite, me.BlendMode, me.Effect);
-        else if (me?.BlendMode == null && me.Effect != null) me.GraphicsDevice.Draw(sprite, me.Effect);
-        else if (me?.BlendMode == null && me.Effect == null) me.GraphicsDevice.Draw(sprite);
+        else if (me?.BlendMode == null && me?.Effect != null) me.GraphicsDevice.Draw(sprite, me.Effect);
+        else if (me?.BlendMode == null && me?.Effect == null) me?.GraphicsDevice.Draw(sprite);
         else me.GraphicsDevice.Draw(sprite);
 
     }

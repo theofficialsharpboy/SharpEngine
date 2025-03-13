@@ -1,5 +1,8 @@
 
 
+using SharpEngine.Helpers;
+using SharpEngine.Input.Actions;
+
 namespace SharpEngine.Input;
 
 public class InputSystem
@@ -47,6 +50,7 @@ public class InputSystem
         _devices.Add(device);
     }
 
+
     /// <summary>
     /// Removes a device.
     /// </summary>
@@ -71,6 +75,24 @@ public class InputSystem
         foreach(var device in _devices)
         {
             if(device.Name == name && device is T)
+            {
+                dev = (T)device;
+            }
+        }
+        return (T)dev;
+    }
+
+    /// <summary>
+    /// Finds any type of <see cref="InputDevice"/> that matchs the <typeparamref name="T"/>
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
+    public T FindFromType<T>() where T: InputDevice
+    {
+        object dev = new object();
+        foreach (var device in _devices)
+        {
+            if (device is T)
             {
                 dev = (T)device;
             }
