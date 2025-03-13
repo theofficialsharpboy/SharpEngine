@@ -176,6 +176,31 @@ public static class SpriteBatchExtensions
         spriteBatch.Draw(new Texture2D(image), new Vector2(rectangle.X, rectangle.Y), color);
     }
 
+    /// <summary>
+    /// Draws a sprite.
+    /// </summary>
+    /// <param name="me"></param>
+    /// <param name="sprite"></param>
+    /// <param name="position"></param>
+    /// <param name="bounds"></param>
+    /// <param name="color"></param>
+    public static void DrawSprite(this SpriteBatch me, Sprite sprite, Vector2 position, Rectangle bounds, Color color)
+    {
+        NullHelper.IsNullThrow(sprite, nameof(sprite));
+        NullHelper.IsNullThrow(position, nameof(position));
+        NullHelper.IsNullThrow(bounds, nameof(bounds));
+        NullHelper.IsNullThrow(color, nameof(color));
+
+        sprite.Position = SFMLHelper.SFMLVector2(position);
+        sprite.Color = SFMLHelper.SFMLColor(color);
+        sprite.TextureRect = SFMLHelper.SFMLRect(bounds);
+
+        if (me?.BlendMode != null && me.Effect != null) me.GraphicsDevice.Draw(sprite, me.BlendMode, me.Effect);
+        else if (me?.BlendMode == null && me.Effect != null) me.GraphicsDevice.Draw(sprite, me.Effect);
+        else if (me?.BlendMode == null && me.Effect == null) me.GraphicsDevice.Draw(sprite);
+        else me.GraphicsDevice.Draw(sprite);
+
+    }
     #region private helpers
     private static bool IsOutsideRoundedCorner(uint x, uint y, uint width, uint height, uint radius)
     {

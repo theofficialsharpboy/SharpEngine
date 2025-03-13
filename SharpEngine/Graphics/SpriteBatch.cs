@@ -16,6 +16,21 @@ public class SpriteBatch
     BlendMode? blendMode;
 
     /// <summary>
+    /// Gets the <see cref="BlendMode"/>
+    /// </summary>
+    public BlendMode BlendMode => blendMode.Value;
+
+    /// <summary>
+    /// Gets the <see cref="Effect"/>
+    /// </summary>
+    public Effect Effect => effect;
+
+    /// <summary>
+    /// Gets the <see cref="GraphicsDevice"/>
+    /// </summary>
+    public GraphicsDevice GraphicsDevice => graphicsDevice;
+
+    /// <summary>
     /// Initalize a new instance of <see cref="SpriteBatch"/>
     /// </summary>
     /// <param name="window"></param>
