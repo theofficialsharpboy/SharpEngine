@@ -110,18 +110,4 @@ public class InputSystem
             device.Update();
         }
     }
-
-    internal T SearchForDevice<T>(string name) where T: InputDevice
-    {
-        foreach(var device in _devices) 
-        {
-            if(device is T && device.Name == name ||
-               device is T && device.Name.Contains(name) ||
-               device is T) {
-                return (T)device;
-            }
-        }
-
-        return (T)new Object();
-    }
 }

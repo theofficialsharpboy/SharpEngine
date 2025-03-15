@@ -208,8 +208,8 @@ public abstract class Control
     {
         if(inputSystem == null) return;
 
-        var mouse = inputSystem?.SearchForDevice<Mouse>("mouse");
-        var keyboard = inputSystem?.SearchForDevice<Keyboard>("keyboard");
+        var mouse = inputSystem?.FindFromType<Mouse>();
+        var keyboard = inputSystem?.FindFromType<Keyboard>();
         
         if(mouse == null) return;
         if(keyboard == null) return;

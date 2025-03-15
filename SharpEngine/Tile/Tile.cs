@@ -13,6 +13,17 @@ public class Tile
     private bool _isCollidable;
     private Sprite _sprite;
     private Color _color = Color.White;
+    private TileTag _tag;
+
+    /// <summary>
+    /// Gets or sets the tag of this tile.
+    /// </summary>
+    /// <remarks>Tag is used for parsers.</remarks>
+    public TileTag Tag
+    {
+        get => _tag;
+        set => _tag = value;
+    }
 
     /// <summary>
     /// Gets the bounds.

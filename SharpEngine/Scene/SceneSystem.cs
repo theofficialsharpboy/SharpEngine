@@ -92,7 +92,8 @@ public class SceneSystem : DrawableComponent
         scene.SceneSystem = this;
         scene.Exiting = false;
 
-        if(initialized) scene.Activate();
+        if(initialized) 
+            scene.Activate();
         
         scenes.Add(scene);
     }

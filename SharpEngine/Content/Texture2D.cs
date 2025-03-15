@@ -32,6 +32,5 @@ public class Texture2D : Texture
     /// <param name="image"></param>
     internal Texture2D(SFML.Graphics.Image image) : base(image)
     {
-
     }
 }
